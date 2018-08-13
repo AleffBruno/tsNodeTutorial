@@ -1,0 +1,3 @@
+no arquivo C:\Users\f1608101\Desktop\tsNodeTutorial\lib\app.ts é feito isso :
+public routePrv : Routes = new Routes(); , pq nao dar um new dentro da propria class
+Routes e exportar
