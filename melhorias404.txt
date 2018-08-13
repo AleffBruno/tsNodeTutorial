@@ -1,3 +1,7 @@
 no arquivo C:\Users\f1608101\Desktop\tsNodeTutorial\lib\app.ts é feito isso :
 public routePrv : Routes = new Routes(); , pq nao dar um new dentro da propria class
 Routes e exportar
+
+no model, declarar logo la "mongoose.model('[NOME_MODEL]',variavelModel)" em vez de exportar 
+
+criar padrao repositorio e usar async await
