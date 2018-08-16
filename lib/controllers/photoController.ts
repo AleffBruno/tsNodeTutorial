@@ -38,6 +38,59 @@ export class PhotoController {
         //     res.send(result);
         // });
     }
+
+    public async updatePhoto(req: Request,res: Response) {
+        let photoRepo: PhotoRepo = new PhotoRepo();
+
+        let photo_id = req.params.id;
+
+        try{
+            let photoToUpdate = await photoRepo.updatePhoto(photo_id,req.body)
+            res.status(200).send({
+                message:"foto atualizada",
+                photo: photoToUpdate
+            });
+        } catch(e) {
+            res.send({message:'falha no request'});
+        }
+        
+        // let photoToUpdate = await photoRepo.findOne(photo_id);
+        // if(photoToUpdate) {
+        //     photoToUpdate.name = req.body.name;
+
+        //     try{
+        //         await photoRepo.savePhoto(photoToUpdate);
+        //         res.status(200).send({
+        //             message:"foto atualizada",
+        //             photo: photoToUpdate
+        //         });
+        //     } catch (e) {
+        //     }
+        // }
+        
+    }
+
+    public async delete(req: Request,res: Response) {
+        
+    }
+
+    public async autoGenerateProcess(req: Request,res: Response) {
+        let photoRepo: PhotoRepo = new PhotoRepo();
+     
+        let photo:Photo = new Photo();
+        photo.name = "AUTO_GENERATED";
+        photo.description = "AUTO_GENERATED";
+        photo.filename = "AUTO_GENERATED";
+        photo.isPublished = true;
+
+        await photoRepo.savePhoto(photo);
+        
+        let allPhotos = await photoRepo.getAllPhotos();
+        res.send(allPhotos);
+    }
+
+    
+
 }
 
 

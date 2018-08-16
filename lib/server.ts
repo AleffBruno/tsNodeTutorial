@@ -1,5 +1,12 @@
 import app from './app';
 const port = 3000;
+import * as http from 'http';
+
+const myHttp = http.createServer(app);
+
+myHttp.listen(port,function(){
+    console.log(`l on ${port}`);
+});
 
 // import "reflect-metadata";
 // import {createConnection} from "typeorm";
@@ -47,6 +54,6 @@ const port = 3000;
 
 
 
-app.listen(port,function(){
-    console.log(`l on ${port}`);
-})
+// app.listen(port,function(){
+//     console.log(`l on ${port}`);
+// })

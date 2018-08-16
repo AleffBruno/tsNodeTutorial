@@ -23,6 +23,14 @@ export class Routes {
         .post(this.photoController.savePhoto)
         .get(this.photoController.getAllPhotos);
 
+        
+        app.route('/photo/:id')
+        .put(this.photoController.updatePhoto);
+        
+
+        app.route('/photo/auto')
+        .get(this.photoController.autoGenerateProcess);
+
 
 
 

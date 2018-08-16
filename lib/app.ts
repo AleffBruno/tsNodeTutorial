@@ -6,7 +6,6 @@ import {createConnection} from "typeorm";
 import * as appConfig from "./db-config";
 
 
-
 class App {
     public app: express.Application;
     public routePrv : Routes = new Routes();
