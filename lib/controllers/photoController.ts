@@ -71,7 +71,19 @@ export class PhotoController {
     }
 
     public async delete(req: Request,res: Response) {
-        
+        let photoRepo: PhotoRepo = new PhotoRepo();
+
+        let photo_id = req.params.id;
+        try{
+            await photoRepo.deletePhoto(photo_id);
+            res.send({
+                message: 'foto deletada'
+            })
+        } catch (e) {
+            res.send({
+                message: 'erro na request'
+            })
+        }
     }
 
     public async autoGenerateProcess(req: Request,res: Response) {

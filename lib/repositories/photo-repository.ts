@@ -25,4 +25,13 @@ export class PhotoRepo {
         return photoToUpdate;
     }
 
+    async deletePhoto(id:number) {
+        //se eu procurar por um ID que nao existe ainda recebo resposta sucesso
+        let photoToRemove = await this.findOne(id);
+        if(photoToRemove) {
+            await getManager().getRepository(Photo).remove(photoToRemove);
+        }
+
+    }
+
 }

@@ -25,7 +25,8 @@ export class Routes {
 
         
         app.route('/photo/:id')
-        .put(this.photoController.updatePhoto);
+        .put(this.photoController.updatePhoto)
+        .delete(this.photoController.delete);
         
 
         app.route('/photo/auto')
