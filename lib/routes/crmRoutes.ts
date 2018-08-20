@@ -1,22 +1,22 @@
 import {Request,Response} from 'express';
 import * as express from 'express';
-import { ContactController } from '../controllers/crmController';
+//import { ContactController } from '../controllers/crmController';
 import { PhotoController } from '../controllers/photoController';
 
 export class Routes {
-    public contactController : ContactController = new ContactController();
+    //public contactController : ContactController = new ContactController();
     public photoController : PhotoController = new PhotoController();
 
     public routes(app : express.Application) : void {
 
-        app.route('/contact')
-        .post(this.contactController.addNewContact)
-        .get(this.contactController.getContact);
+        // app.route('/contact')
+        // .post(this.contactController.addNewContact)
+        // .get(this.contactController.getContact);
 
-        app.route('/contact/:contactId')
-        .get(this.contactController.getContactWithId)
-        .put(this.contactController.updateContact)
-        .delete(this.contactController.deleteContact);
+        // app.route('/contact/:contactId')
+        // .get(this.contactController.getContactWithId)
+        // .put(this.contactController.updateContact)
+        // .delete(this.contactController.deleteContact);
 
 
         app.route('/photo')

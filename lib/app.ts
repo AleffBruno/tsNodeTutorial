@@ -3,8 +3,9 @@ import * as bodyParser from 'body-parser';
 import { Routes } from './routes/crmRoutes';
 import "reflect-metadata";
 import {createConnection} from "typeorm";
-import * as appConfig from "./db-config";
+//import * as appConfig from "./db-config"; atualizado para pegar automaticamente
 
+import "reflect-metadata";
 
 class App {
     public app: express.Application;
@@ -24,7 +25,12 @@ class App {
     }
 
     private async initializeConnectionUsingTypeorm() {
-        await createConnection(appConfig.dbOptions);
+        //await createConnection(appConfig.dbOptions);
+
+        // as configurações sao buscadas automaticamente no arquivo 'ormconfig.json'
+        // caso elas sao venham, tem que por..... ( veja o codigo acima )
+        await createConnection(); 
+
 
         // createConnection(appConfig.dbOptions).then(async connection => {
         //     console.log("Connected to DB");

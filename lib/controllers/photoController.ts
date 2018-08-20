@@ -7,6 +7,7 @@ export class PhotoController {
         let photoRepo: PhotoRepo = new PhotoRepo();
  
         console.log("Received SavePhoto ==> POST");
+        console.log("req.body abaixo");
         console.log(req.body);
      
         let photo:Photo = new Photo();
@@ -15,7 +16,8 @@ export class PhotoController {
         photo.filename = req.body.filename;
         photo.isPublished = true;
 
-        await photoRepo.savePhoto(photo);
+        let a = await photoRepo.savePhoto(photo);
+        console.log(a);
         res.send(photo);
      
         // photoRepo.savePhoto(photo).then((result: any) => {

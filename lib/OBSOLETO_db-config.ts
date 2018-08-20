@@ -1,3 +1,6 @@
+
+//OBSOLETO, as configurações sao buscadas automaticamente no arquivo 'ormconfig.json'
+
 import "reflect-metadata";
 import {ConnectionOptions} from "typeorm";
  
@@ -10,6 +13,7 @@ import {ConnectionOptions} from "typeorm";
     database: "tsnodetutorial",
     entities: [
         __dirname + "/models/*.ts"
+        //"lib/models/*.ts" atenção as models estao em .TS ou .JS
     ],
     synchronize: true,
     logging: false
