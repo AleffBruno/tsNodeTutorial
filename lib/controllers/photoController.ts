@@ -10,11 +10,14 @@ export class PhotoController {
         console.log("req.body abaixo");
         console.log(req.body);
      
-        let photo:Photo = new Photo();
-        photo.name = req.body.name;
-        photo.description = req.body.description;
-        photo.filename = req.body.filename;
-        photo.isPublished = true;
+        let photo = new Photo();
+        
+        let test = req.body as Photo 
+        console.log(test);
+        // photo.name = req.body.name;
+        // photo.description = req.body.description;
+        // photo.filename = req.body.filename;
+        // photo.isPublished = true;
 
         let a = await photoRepo.savePhoto(photo);
         console.log(a);

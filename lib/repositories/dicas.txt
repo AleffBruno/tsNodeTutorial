@@ -1,0 +1,2 @@
+faz um repositorio padrao, extende ele para os outros e quando necessario adicione ou sobrescreva
+algum metodo, lembrando sempre de implementar as interfaces
